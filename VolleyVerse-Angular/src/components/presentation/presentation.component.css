@@ -1,0 +1,33 @@
+.summary-presentation {
+    width: auto;
+    height: fit-content;
+    background-color: rgb(84, 84, 84);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(181, 181, 181);
+}
+
+#header-container {
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px;
+}
+
+#title-header, #options-header {
+    gap: 15px;
+}
+
+h3 {
+    white-space: nowrap;
+}
+
+.description {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+}
