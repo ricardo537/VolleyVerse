@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './register-user.component.css'
 })
 export class RegisterUserComponent {
-
+  
 }

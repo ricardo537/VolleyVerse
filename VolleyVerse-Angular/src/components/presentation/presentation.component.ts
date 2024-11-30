@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-presentation',
   standalone: true,
-  imports: [ RouterOutlet ],
+  imports: [ RouterOutlet, RouterLink ],
   templateUrl: './presentation.component.html',
   styleUrl: './presentation.component.css'
 })
@@ -18,4 +18,5 @@ export class PresentationComponent {
       this.visitor = "user";
     }
   }
+
 }

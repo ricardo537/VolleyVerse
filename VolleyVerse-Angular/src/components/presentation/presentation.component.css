@@ -1,4 +1,6 @@
-.summary-presentation {
+/* HEADER */
+
+header {
     width: auto;
     height: fit-content;
     background-color: rgb(84, 84, 84);
@@ -30,4 +32,33 @@ h3 {
     flex-direction: column;
     justify-items: center;
     text-align: center;
+}
+
+/* FORMULARIOS */
+
+.forms {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.register {
+    width: auto;
+    height: fit-content;
+    background-color: red;
+    padding: 3%;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(84, 84, 84);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
