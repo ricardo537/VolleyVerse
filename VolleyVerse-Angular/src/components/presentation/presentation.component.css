@@ -1,15 +1,18 @@
 /* HEADER */
 
 header {
-    width: auto;
-    height: fit-content;
-    background-color: rgb(84, 84, 84);
+    width: 100%;
+    max-height: 500px;
+    aspect-ratio: 800 / 512;
+    background-image: url('../../img/PresentationImg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .header {
     display: flex;
     flex-direction: row;
-    background-color: rgb(181, 181, 181);
 }
 
 #header-container {
@@ -26,6 +29,10 @@ h3 {
     white-space: nowrap;
 }
 
+h1, h2, h3, p {
+    color: white;
+}
+
 .description {
     padding: 2%;
     display: flex;
@@ -35,6 +42,13 @@ h3 {
 }
 
 /* FORMULARIOS */
+
+body {
+    background-image: url("../../img/logoFondoPresentation.png");
+    background-repeat: inherit;
+    display: flex; 
+    flex-direction: column;
+}
 
 .forms {
     width: auto;
@@ -55,10 +69,17 @@ h3 {
 
 /* FOOTER */
 footer {
-    background-color: rgb(84, 84, 84);
     padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    aspect-ratio: 1280 / 300;
+    background-image: url('../../img/FooterImg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: 200px;
+    width: 100%;
+    box-sizing: border-box;
 }
