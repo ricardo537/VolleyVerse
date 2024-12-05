@@ -1,0 +1,41 @@
+<header>
+    <div class="header" id="header-container">
+      <div class="header" id="title-header">
+        <span>Icono</span>
+        <h3>VolleyVerse</h3>
+      </div>
+      <div class="header" id="options-header">
+        <a href=""><h3>Iniciar sesión</h3></a>
+        @if (this.visitor == "user") {
+          <a [routerLink]="['/volleyverse/auth/register/user']"><h3>Registrarse</h3></a>
+          <button (click)="changeVisitor()">¿Eres un club?</button>
+        } @else {
+          <a [routerLink]="['/volleyverse/auth/register/club']"><h3>Registrarse</h3></a>
+          <button (click)="changeVisitor()">¿Eres un jugador?</button>
+        }
+      </div>
+    </div>
+    <div class="description">
+      @if (this.visitor == "user") {
+        <h1>Conoce gente, juega y forma parte de la comunidad del voleibol</h1>
+        <p>Conoce de gente de nivel aprecido al tuyo y participa en eventos como torneos, ligas o partidos amistosos.</p>
+        <p>Lleva un análisis de tus estadísticas segun tus eventos participados y resultados que obtengas en tu club</p>
+      } @else {
+        <h1>Gestiona tu propio club, publica eventos relacionados y calcula el rendimiento de tus equipos</h1>
+        <p>Muestra toda la información sobre tu club, equipos, jugadores, etc, para que otros jugadores puedan investigar, se un club que destaque y promocionate.</p>
+        <p>Lleva las estadísticas de tus jugadores y equipos, de esta forma podrás promocionar más el club y darte a conocer.</p>
+      }
+    </div>
+</header>
+<body>
+  <div class="forms">
+    <div class="register">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</body>
+<footer>
+  <h2>Contacto del desarrollador</h2>
+  <p>dawricardogmail.com</p>
+  <a href="https://github.com/ricardo537/VolleyVerse-Front.git"><button>GitHub</button></a>
+</footer>
