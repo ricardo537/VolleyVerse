@@ -38,12 +38,10 @@ export class RegisterClubComponent {
         next: (response) => {
           if (response) {
             this.router.navigate(['/presentacion/auth/login']);
-          } else {
-            this.message = "El club con ese email ya está registrado.";
-          }
+          } 
         }, 
         error: (error) => {
-          this.message = "Ocurrió un error al conectar con el servidor.";
+          this.message = "El club con ese email, ese teléfono o ese nombre ya está registrado.";
         }
       });
     }

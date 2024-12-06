@@ -1,32 +1,35 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
-    <h2>Registro de usuario</h2>
+<div class="register">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h2>Registro de usuario</h2>
 
-    <div class="inputs">
         <p *ngIf="message !== ''" [textContent]="message"></p>
-        <div class="login-data">
-            <label>Email</label>
-            <input formControlName="email" type="text" name="email" required>
-            
-            <br>
 
-            <label>Contraseña</label>
-            <input formControlName="password" type="password" name="password" required>
+        <div class="inputs">
+            <div class="login-data">
+                <label>Email</label>
+                <input formControlName="email" type="text" name="email" required>
+                
+                <br>
 
-            <br>
+                <label>Contraseña</label>
+                <input formControlName="password" type="password" name="password" required>
 
-            <label>Confirma la contraseña</label>
-            <input formControlName="password_confirm" type="password" name="password_confirm" required>
-        </div>
-        <div class="other-data">
-            <label>Nombre</label>
-            <input formControlName="name" type="text" name="name" required>
+                <br>
 
-            <br>
+                <label>Confirma la contraseña</label>
+                <input formControlName="password_confirm" type="password" name="password_confirm" required>
+            </div>
+            <div class="other-data">
+                <label>Nombre</label>
+                <input formControlName="name" type="text" name="name" required>
 
-            <label>Apellidos</label>
-            <input formControlName="last_name" type="text" name="last_name" required>
-        </div>
-    </div>  
-    <br>
-    <button type="submit">Registrar</button>
-</form>
+                <br>
+
+                <label>Apellidos</label>
+                <input formControlName="last_name" type="text" name="last_name" required>
+            </div>
+        </div>  
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+</div>

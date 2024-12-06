@@ -36,13 +36,10 @@ export class RegisterUserComponent {
         next: (response) => {
           if (response) {
             this.router.navigate(['/presentation/auth/login']);
-          } else {
-            this.message = "El usuario con ese email ya esta registrado."
-          }
+          } 
         }, 
         error: (error) => {
-          this.message = "Ocurrió un error al conectar con el servidor.";
-          console.error(error);
+          this.message = "El usuario con ese email ya esta registrado."
         }
       });
     }

@@ -1,36 +1,41 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
-    <h2>Registro de club</h2>
+<div class="register">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <h2>Registro de club</h2>
 
-    <p *ngIf="message !== ''" [textContent]="message"></p>
+        <p *ngIf="message !== ''" [textContent]="message"></p>
 
+        <div class="inputs">
+            <div class="login-data">
+                <label>Email</label>
+                <input formControlName="email" type="text" name="email" required>
 
-    <label>Email</label>
-    <input formControlName="email" type="text" name="email" required>
+                <br>
 
-    <br>
+                <label>Contraseña</label>
+                <input formControlName="password" type="password" name="password" required>
 
-    <label>Contraseña</label>
-    <input formControlName="password" type="password" name="password" required>
+                <br>
 
-    <br>
+                <label>Confirma la contraseña</label>
+                <input formControlName="password_confirm" type="password" name="password_confirm" required>
+            </div>
 
-    <label>Confirma la contraseña</label>
-    <input formControlName="password_confirm" type="password" name="password_confirm" required>
-    
-    <br>
+            <div class="other-data">
+                <label>Nombre del club</label>
+                <input formControlName="name" type="text" name="name" required>
+                
+                <br>
 
-    <label>Nombre del club</label>
-    <input formControlName="name" type="text" name="name" required>
-    
-    <br>
+                <label>Código postal</label>
+                <input formControlName="zip_code" type="text" name="zip_code" required>
 
-    <label>Código postal</label>
-    <input formControlName="zip_code" type="text" name="zip_code" required>
+                <br>
 
-    <label>Número de contacto</label>
-    <input formControlName="contact" type="text" name="contact" required>
-    
-    <br>
-
-    <button type="submit">Registrar</button>
-</form>
+                <label>Número de contacto</label>
+                <input formControlName="contact" type="text" name="contact" required>
+            </div>
+        </div>
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+</div>
