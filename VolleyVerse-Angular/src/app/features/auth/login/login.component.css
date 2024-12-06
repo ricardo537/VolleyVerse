@@ -1,0 +1,25 @@
+.login {
+    border-radius: 20px;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(58, 65, 254);
+    padding: 3%;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    margin: 10px;
+    width: 90%;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 100%;  
+}

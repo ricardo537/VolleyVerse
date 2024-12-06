@@ -14,15 +14,13 @@ export class authSessionGuard implements CanActivate {
     if (session !== null) {
       return true;
     } else {
-      //Hay que cambiar la ruta segun la que escriba en el app.routes.ts
-      this.router.navigate(['login']);
+      this.router.navigate(['/volleyverse/auth/login']);
       return false;
     }
   }
 
   getSession(): LoginDTO|null {
-    //falta revisar como se introducirá en el sessionStorage
-    const sessionData = localStorage.getItem("session");
+    const sessionData = localStorage.getItem("token");
     if (sessionData) {
       try {
         return JSON.parse(sessionData) as LoginDTO;

@@ -37,7 +37,7 @@ export class RegisterClubComponent {
       this.clubService.registerClub(register).subscribe({
         next: (response) => {
           if (response) {
-            this.router.navigate(['/presentacion/auth/login']);
+            this.router.navigate(['/volleyverse/auth/login']);
           } 
         }, 
         error: (error) => {

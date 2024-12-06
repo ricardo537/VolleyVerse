@@ -20,19 +20,13 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  //Es posible que el cuerpo que se envía en las peticiones haya que forzar nosotros la estructura
-    /* Estos métodos hay que incluirlos en un servicio específicos
-
-  public registerUser (register: RegisterUserDTO): Observable<boolean> {
-    return this.http.post<boolean>(this.apiRegisterUserURL, register);
-  }
-
-  public registerClub (register: RegisterClubDTO): Observable<boolean> {
-    return this.http.post<boolean>(this.apiRegisterClubURL, register);
-  }*/
-
   public login (login: LoginDTO): Observable<LoginDTO> {
-    return this.http.post<LoginDTO>(this.apiLoginURL, login);
+    const body = {
+      "email": login.email,
+      "password": login.password,
+      "type": login.type
+    }
+    return this.http.post<LoginDTO>(this.apiLoginURL, body);
   }
 
   public delete (login: LoginDTO): Observable<boolean> {
