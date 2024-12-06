@@ -35,7 +35,7 @@ export class RegisterUserComponent {
       this.authService.registerUser(register).subscribe({
         next: (response) => {
           if (response) {
-            this.router.navigate(['/presentation/auth/login']);
+            this.router.navigate(['/volleyverse/auth/login']);
           } 
         }, 
         error: (error) => {
