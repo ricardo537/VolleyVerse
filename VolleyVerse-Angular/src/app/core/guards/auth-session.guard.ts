@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, GuardResult, MaybeAsync, Router, RouterStateSnapshot } from '@angular/router';
-import { SessionDTO } from '../../models/dto/session-dto';
+import { LoginDTO } from 'src/app/models/dto/login-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +20,12 @@ export class authSessionGuard implements CanActivate {
     }
   }
 
-  getSession(): SessionDTO|null {
+  getSession(): LoginDTO|null {
     //falta revisar como se introducirá en el sessionStorage
     const sessionData = localStorage.getItem("session");
     if (sessionData) {
       try {
-        return JSON.parse(sessionData) as SessionDTO;
+        return JSON.parse(sessionData) as LoginDTO;
       } catch (error) {
         console.error("Error parsing session data", error);
         return null;

@@ -18,3 +18,14 @@ h2 {
     display: flex;
     flex-direction: column;
 }
+
+.register {
+    border-radius: 20px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(58, 65, 254);
+    padding: 3%;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
