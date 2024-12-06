@@ -19,9 +19,7 @@ export class UserService {
       "name": register.name,
       "last_name": register.last_name
     }
-    const headers = { 'Content-Type': 'application/json' };
-    console.log(body);
-    return this.http.post<boolean>(this.apiRegisterUserURL, body, {headers});
+    return this.http.post<boolean>(this.apiRegisterUserURL, body);
   }
 
 }

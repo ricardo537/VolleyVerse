@@ -13,7 +13,14 @@ export class ClubService {
 
   //Es posible que el cuerpo que se envía en las peticiones haya que forzar nosotros la estructura
   public registerClub (register: RegisterClubDTO): Observable<boolean> {
-    return this.http.post<boolean>(this.apiRegisterClubURL, register);
+    const body = {
+      "email": register.email,
+      "password": register.password,
+      "name": register.name,
+      "zip_code": register.zip_code,
+      "contact": register.contact
+    }
+    return this.http.post<boolean>(this.apiRegisterClubURL, body);
   }
 
 }

@@ -9,4 +9,9 @@ export class Validator {
         const zipCodeRegex = /^\d{5}$/;
         return zipCodeRegex.test(zip_code);
     }
+
+    public static contactComprobation (contact:string): boolean {
+        const contactRegex = /^\d{9}$/;
+        return contactRegex.test(contact);
+    }
 }

@@ -24,7 +24,8 @@ export class RegisterClubComponent {
       password: ['', [Validators.required]],
       password_confirm: ['', [Validators.required]],
       name: ['', [Validators.required]],
-      zip_code: ['', [Validators.required]]
+      zip_code: ['', [Validators.required]],
+      contact: ['', [Validators.required]]
     })
   }
 
