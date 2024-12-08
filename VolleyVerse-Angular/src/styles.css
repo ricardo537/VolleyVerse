@@ -1,4 +1,7 @@
-body {
-    margin: 0px;
-    padding: 0px;
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;   /* Evita el desplazamiento lateral */
+    width: 100%;           /* Asegura que la anchura no exceda el tamaño de la ventana */
+    height: 100%;          /* Asegura que el contenido no exceda la altura */
 }

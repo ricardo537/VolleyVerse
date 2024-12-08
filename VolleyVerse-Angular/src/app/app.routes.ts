@@ -6,9 +6,9 @@ import { DashboardComponent } from './shared/components/dashboard/dashboard.comp
 import { authSessionGuard } from './core/guards/auth-session.guard';
 import { RegisterPlayerComponent } from './features/auth/register/register-player/register-player.component';
 import { OutOfSessionGuard } from './core/guards/out-of-session.guard';
+import { ProfileComponent } from './features/auth/profile/profile.component';
 
 export const routes: Routes = [
-    //Si pones solo volleyverse se queda en blanco, hay que arreglarlo
     { path: 'volleyverse', title: 'VolleyVerse',
         children: [
             { path: 'presentation', component: PresentationComponent, canActivate: [OutOfSessionGuard], 
@@ -18,7 +18,16 @@ export const routes: Routes = [
                     { path: 'login', component: LoginComponent, title: 'Iniciar sesión' },
                 ]
             },
-            { path: 'dashboard', component: DashboardComponent, title: 'Dashboard', canActivate: [authSessionGuard] },
+            { path: 'dashboard', component: DashboardComponent, title: 'Dashboard', canActivate: [authSessionGuard], 
+                children: [
+                    { path: 'profile', component: ProfileComponent, title: 'profile' },
+                    //Hay que cambiarlo por el componente home, lo único que aún no está creado
+                    { path: '', redirectTo: '/volleyverse/dashboard/profile', pathMatch: 'full' },
+                    { path: '**', redirectTo: '/volleyverse/dashboard/profile', pathMatch: 'full' }
+                ]
+            },
+            { path: '', redirectTo: '/volleyverse/presentation/login', pathMatch: 'full' },
+            { path: '**', redirectTo: '/volleyverse/presentation/login', pathMatch: 'full' }
         ]
     },
     { path: '', redirectTo: '/volleyverse/presentation/login', pathMatch: 'full' },
