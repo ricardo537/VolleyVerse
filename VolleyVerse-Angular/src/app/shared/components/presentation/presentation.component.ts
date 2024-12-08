@@ -11,11 +11,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class PresentationComponent {
   public visitor: string = "user";
 
+  //En caso que una vez que se acceda al home se quiera borrar la sesión entonces solo habrá que borrarla en esta parte del código
+
   changeVisitor(): void {
-    if (this.visitor == "user") {
+    if (this.visitor == "player") {
       this.visitor = "club";
     } else {
-      this.visitor = "user";
+      this.visitor = "player";
     }
   }
 

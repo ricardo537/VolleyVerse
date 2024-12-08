@@ -1,6 +1,6 @@
 import { LoginDTO } from "./login-dto";
 
-export class UpdateUserDTO {
+export class UpdatePlayerDTO {
     email: string;
     password: string;
     name: string;

@@ -5,18 +5,18 @@
         <h3>VolleyVerse</h3>
       </div>
       <div class="header" id="options-header">
-        <a [routerLink]="['/volleyverse/auth/login']"><h3>Iniciar sesión</h3></a>
-        @if (this.visitor == "user") {
-          <a [routerLink]="['/volleyverse/auth/register/user']"><h3>Registrarse</h3></a>
+        <a [routerLink]="['/volleyverse/presentation/login']"><h3>Iniciar sesión</h3></a>
+        @if (this.visitor == "player") {
+          <a [routerLink]="['/volleyverse/presentation/register/player']"><h3>Registrarse</h3></a>
           <button (click)="changeVisitor()">¿Eres un club?</button>
         } @else {
-          <a [routerLink]="['/volleyverse/auth/register/club']"><h3>Registrarse</h3></a>
+          <a [routerLink]="['/volleyverse/presentation/register/club']"><h3>Registrarse</h3></a>
           <button (click)="changeVisitor()">¿Eres un jugador?</button>
         }
       </div>
     </div>
     <div class="description">
-      @if (this.visitor == "user") {
+      @if (this.visitor == "player") {
         <h1>Conoce gente, juega y forma parte de la comunidad del voleibol</h1>
         <p>Conoce de gente de nivel aprecido al tuyo y participa en eventos como torneos, ligas o partidos amistosos.</p>
         <p>Lleva un análisis de tus estadísticas segun tus eventos participados y resultados que obtengas en tu club</p>

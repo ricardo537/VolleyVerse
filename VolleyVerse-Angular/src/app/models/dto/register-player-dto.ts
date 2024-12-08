@@ -1,5 +1,5 @@
 import { Validator } from "src/app/shared/utils/validator";
-export class RegisterUserDTO {
+export class RegisterPlayerDTO {
     email: string;
     password: string;
     name: string;
@@ -12,10 +12,10 @@ export class RegisterUserDTO {
         this.last_name = last_name;
     }
 
-    public static fromJSON (json:any): RegisterUserDTO|string {
+    public static fromJSON (json:any): RegisterPlayerDTO|string {
         if (json.password === json.password_confirm) {
             if (Validator.emailComprobation(json.email)) {
-                return new RegisterUserDTO(json.email, json.password, json.name, json.last_name);
+                return new RegisterPlayerDTO(json.email, json.password, json.name, json.last_name);
             } else {
                 return "El email no cumple el formato correcto, revísalo por favor.";
             }

@@ -3,6 +3,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { LoginDTO } from 'src/app/models/dto/login-dto';
 import { AuthService } from '../auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
   public message: string = "";
   formLogin: FormGroup;
 
-  constructor (private formBuilder: FormBuilder, private authService: AuthService) {
+  constructor (private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.formLogin = this.formBuilder.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]]
@@ -31,7 +32,7 @@ export class LoginComponent {
       this.authService.login(login).subscribe({
         next: (response : LoginDTO) => {
           sessionStorage.setItem("token", JSON.stringify(response));
-          //Falta la redirección a la página principal que aún no está creada
+          this.router.navigate(['/volleyverse/dashboard']);
         },
         error: (error) => {
           this.message = "El usuario no existe por favor revise los datos introducidos.";

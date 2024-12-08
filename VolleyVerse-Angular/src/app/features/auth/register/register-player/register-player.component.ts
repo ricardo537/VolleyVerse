@@ -1,23 +1,23 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RegisterUserDTO } from 'src/app/models/dto/register-user-dto';
+import { RegisterPlayerDTO } from 'src/app/models/dto/register-player-dto';
 import { Router } from '@angular/router';
-import { UserService } from '../../user.service';
+import { PlayerService } from '../../player.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-register-user',
+  selector: 'app-register-player',
   imports: [ CommonModule, ReactiveFormsModule, HttpClientModule ],
-  templateUrl: './register-user.component.html',
-  styleUrl: './register-user.component.css',
-  providers: [UserService]
+  templateUrl: './register-player.component.html',
+  styleUrl: './register-player.component.css',
+  providers: [PlayerService]
 })
-export class RegisterUserComponent {
+export class RegisterPlayerComponent {
   public message: string = "";
   registerForm: FormGroup;
 
-  constructor (private formBuilder: FormBuilder, private authService: UserService, private router: Router) {
+  constructor (private formBuilder: FormBuilder, private playerService: PlayerService, private router: Router) {
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -28,14 +28,15 @@ export class RegisterUserComponent {
   }
 
   public register(): void {
-    const register: RegisterUserDTO|string = RegisterUserDTO.fromJSON(this.registerForm.value);
+    const register: RegisterPlayerDTO|string = RegisterPlayerDTO.fromJSON(this.registerForm.value);
+    console.log(register);
     if (typeof register === "string") {
       this.message = register;
     } else {
-      this.authService.registerUser(register).subscribe({
+      this.playerService.registerPlayer(register).subscribe({
         next: (response) => {
           if (response) {
-            this.router.navigate(['/volleyverse/auth/login']);
+            this.router.navigate(['/volleyverse/presentation/login']);
           } 
         }, 
         error: (error) => {
