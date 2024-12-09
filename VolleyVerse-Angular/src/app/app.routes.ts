@@ -20,10 +20,8 @@ export const routes: Routes = [
             },
             { path: 'dashboard', component: DashboardComponent, title: 'Dashboard', canActivate: [authSessionGuard], 
                 children: [
-                    { path: 'profile', component: ProfileComponent, title: 'profile' },
+                    { path: 'profile', component: ProfileComponent, title: 'Profile' }
                     //Hay que cambiarlo por el componente home, lo único que aún no está creado
-                    { path: '', redirectTo: '/volleyverse/dashboard/profile', pathMatch: 'full' },
-                    { path: '**', redirectTo: '/volleyverse/dashboard/profile', pathMatch: 'full' }
                 ]
             },
             { path: '', redirectTo: '/volleyverse/presentation/login', pathMatch: 'full' },

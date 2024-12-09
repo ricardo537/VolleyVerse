@@ -1,8 +1,10 @@
 <div class="general-container">
     <div class="menu">
+        <button>Eventos</button>
+        <button>Añadir eventos</button>
+        <button>Estadísticas</button>
+        <button>Calendario</button>
         <button [routerLink]="['/volleyverse/dashboard/profile']">Perfil</button>
     </div>
-    <div class="interface_component">
-        <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
 </div>

@@ -24,13 +24,4 @@ export class AuthService {
   public delete (login: LoginDTO): Observable<boolean> {
     return this.http.post<boolean>(this.apiDeleteURL, login);
   }
-
-  /* Estos métodos hay que incluirlos en un servicio específicos
-  public updateUser (update: UpdateUserDTO): Observable<LoginDTO> {
-    return this.http.post<LoginDTO>(this.apiUpdateUserURL, update);
-  }
-
-  public updateClub (update: UpdateClubDTO): Observable<LoginDTO> {
-    return this.http.post<LoginDTO>(this.apiUpdateClubURL, update);
-  }*/
 }
