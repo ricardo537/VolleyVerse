@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateClubDTO } from 'src/app/models/dto/update-club-dto';
 
 @Component({
   selector: 'app-update-club',
@@ -22,7 +23,7 @@ export class UpdateClubComponent {
     })
   }
 
-  public update () {
+  public update (): void {
     
   }
 }
