@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginDTO } from 'src/app/models/dto/login-dto';
+import { PlayerDTO } from 'src/app/models/dto/player-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { LoginDTO } from 'src/app/models/dto/login-dto';
 export class AuthService {
   private apiLoginURL = "http://127.0.0.1:8080/volleyverse/api/v1/auth/login";
   private apiDeleteURL = "http://127.0.0.1:8080/volleyverse/api/v1/auth/delete";
+  private apiGetProfileURL = "http://127.0.0.1:8080/volleyverse/api/v1/auth/getProfile";
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +24,20 @@ export class AuthService {
   }
 
   public delete (login: LoginDTO): Observable<boolean> {
-    return this.http.post<boolean>(this.apiDeleteURL, login);
+    const body = {
+      "email": login.email,
+      "password": login.password,
+      "type": login.type
+    }
+    return this.http.post<boolean>(this.apiDeleteURL, body);
+  }
+
+  public getProfile (login: LoginDTO): Observable<PlayerDTO> {
+    const body = {
+      "email": login.email,
+      "password": login.password,
+      "type": login.type
+    }
+    return this.http.post<PlayerDTO>(this.apiGetProfileURL, body);
   }
 }

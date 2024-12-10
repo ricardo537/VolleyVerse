@@ -4,8 +4,12 @@
             <img src="https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg">
         </div>
         <div class="profile-data">
-            <h2>John Doe</h2>
-            <p>Soy un jugador nuevo que he empezado a jugar en el club de colmenar viejo, en primera nacional senior masculino. Juego de todo menos de colocador, aunque si me guataría aprender a colocar.</p>
+            <h2 [textContent]="this.playerData.name + ' ' + this.playerData.last_name"></h2>
+            <p [textContent]="this.playerData.description"></p>
+        </div>
+        <div class="options">
+            <button (click)="deleteAccount()">Borrar cuenta</button>
+            <button (click)="logout()">Logout</button>
         </div>
     </div>
     <div class="stats">
@@ -21,5 +25,4 @@
 </div>
 <div class="update-form">
     <app-update-player></app-update-player>
-    <!--Aquí se escribiran los componentes según el type-->
 </div>
