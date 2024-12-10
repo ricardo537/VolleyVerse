@@ -29,7 +29,6 @@ export class RegisterPlayerComponent {
 
   public register(): void {
     const register: RegisterPlayerDTO|string = RegisterPlayerDTO.fromJSON(this.registerForm.value);
-    console.log(register);
     if (typeof register === "string") {
       this.message = register;
     } else {
