@@ -1,4 +1,4 @@
-<form [formGroup]="updateForm" (ngSubmit)="update()">
+<form [formGroup]="updateForm" (ngSubmit)="updatePlayer()">
     <h2>Actualiza tu usuario</h2>
     <p>Solo escribe los datos que quieres actualizar</p>
 
@@ -22,6 +22,8 @@
         <label>Nueva descripcion</label>
         <input type="text" formControlName="description">
     </div>
-
+    @if (this.message !== "") {
+        <p id="error"></p>
+    }
     <button>Actualizar</button>
 </form>

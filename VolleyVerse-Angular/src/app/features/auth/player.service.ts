@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginDTO } from 'src/app/models/dto/login-dto';
 import { RegisterPlayerDTO } from 'src/app/models/dto/register-player-dto';
 import { UpdatePlayerDTO } from 'src/app/models/dto/update-player-dto';
 
@@ -24,7 +25,7 @@ export class PlayerService {
     return this.http.post<boolean>(this.apiRegisterPlayerURL, body);
   }
 
-  public updatePlayer (update: UpdatePlayerDTO): Observable<any> {
+  public updatePlayer (update: UpdatePlayerDTO): Observable<LoginDTO> {
     const body = {
       "email": update.email, 
       "password": update.password,
@@ -38,7 +39,7 @@ export class PlayerService {
       }
     };
 
-    return this.http.post(this.apiUpdatePlayerURL, body);
+    return this.http.post<LoginDTO>(this.apiUpdatePlayerURL, body);
   }
 
 }
