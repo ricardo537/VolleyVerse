@@ -23,7 +23,7 @@
         <input type="text" formControlName="description">
     </div>
     @if (this.message !== "") {
-        <p id="error"></p>
+        <p id="error" [textContent]="this.message"></p>
     }
     <button>Actualizar</button>
 </form>

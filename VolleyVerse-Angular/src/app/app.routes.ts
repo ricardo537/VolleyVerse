@@ -6,7 +6,7 @@ import { DashboardComponent } from './shared/components/dashboard/dashboard.comp
 import { authSessionGuard } from './core/guards/auth-session.guard';
 import { RegisterPlayerComponent } from './features/auth/register/register-player/register-player.component';
 import { OutOfSessionGuard } from './core/guards/out-of-session.guard';
-import { ProfileComponent } from './features/auth/profile/profile.component';
+import { ProfileComponent } from './features/auth/profile/player-profile/player-profile.component';
 
 export const routes: Routes = [
     { path: 'volleyverse', title: 'VolleyVerse',

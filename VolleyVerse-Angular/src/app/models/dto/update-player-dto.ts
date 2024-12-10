@@ -20,7 +20,7 @@ export class UpdatePlayerDTO {
 
     public static fromJSON (json:any): UpdatePlayerDTO|string {
         if (json.password === json.password_confirm) {
-            if (Validator.emailComprobation(json.email)) {
+            if (Validator.emailComprobation(json.email) || json.email === "") {
                 return new UpdatePlayerDTO(json.email, json.password, json.name, json.last_name, json.description);
             } else {
                 return "El email no cumple el formato correcto, revísalo por favor.";

@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { UpdatePlayerComponent } from "../update/update-player/update-player.component";
-import { AuthService } from '../auth.service';
+import { UpdatePlayerComponent } from "../../update/update-player/update-player.component";
 import { PlayerDTO } from 'src/app/models/dto/player-dto';
 import { Router } from '@angular/router';
 import { LoginDTO } from 'src/app/models/dto/login-dto';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-profile',
   imports: [UpdatePlayerComponent ],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css', 
+  templateUrl: './player-profile.component.html',
+  styleUrl: './player-profile.component.css', 
   providers: [ AuthService ]
 })
 export class ProfileComponent {
