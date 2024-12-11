@@ -25,12 +25,12 @@ export class PlayerProfileComponent {
           this.playerData = response;
         }, 
         error: (error) => {
-          this.playerData = new PlayerDTO("Error al encontrar los datos del usuario", "", "");
+          this.playerData = new PlayerDTO("Error al encontrar los datos del usuario", "", "", "");
         }
       })
     }
 
-    this.playerData = new PlayerDTO("No hay una session sobre la que buscar los datos", "", "");
+    this.playerData = new PlayerDTO("No hay una session sobre la que buscar los datos", "", "", "");
   }
 
   public logout (): void {

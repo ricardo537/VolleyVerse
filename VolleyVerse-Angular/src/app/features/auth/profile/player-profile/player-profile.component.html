@@ -1,7 +1,7 @@
 <div class="profile-container">
     <div class="profile-resume">
         <div class="photo">
-            <img src="https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg">
+            <img [src]="this.playerData.img">
         </div>
         <div class="profile-data">
             <h2 [textContent]="this.playerData.name + ' ' + this.playerData.last_name"></h2>
