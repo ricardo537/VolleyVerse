@@ -6,13 +6,13 @@ import { LoginDTO } from 'src/app/models/dto/login-dto';
 import { AuthService } from '../../auth.service';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-player-profile',
   imports: [UpdatePlayerComponent ],
   templateUrl: './player-profile.component.html',
   styleUrl: './player-profile.component.css', 
   providers: [ AuthService ]
 })
-export class ProfileComponent {
+export class PlayerProfileComponent {
   public playerData:PlayerDTO;
 
   constructor (private authService: AuthService, private router:Router) {
