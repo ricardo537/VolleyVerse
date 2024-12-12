@@ -11,7 +11,7 @@ export class AuthService {
   private apiLoginURL = "http://127.0.0.1:8080/volleyverse/api/v1/auth/login";
   private apiDeleteURL = "http://127.0.0.1:8080/volleyverse/api/v1/auth/delete";
   private apiGetProfileURL = "http://127.0.0.1:8080/volleyverse/api/v1/auth/getProfile";
-  private apiGetProfileImgURL = "http://127.0.0.1:8080/volleyverse/api/v1/media/";
+  private apiUpdateProfileImgURL = "http://127.0.0.1:8080/volleyverse/api/v1/media/upload/profile/";
 
   constructor(private http: HttpClient) { }
 
@@ -40,5 +40,9 @@ export class AuthService {
       "type": login.type
     }
     return this.http.post<PlayerDTO>(this.apiGetProfileURL, body);
+  }
+
+  public updateProfileImg (email: string, file:FormData): Observable<any> {
+    return this.http.post<any>(`${this.apiUpdateProfileImgURL}${email}`, file);
   }
 }

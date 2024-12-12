@@ -2,6 +2,14 @@
     <div class="profile-resume">
         <div class="photo">
             <img [src]="this.playerData.img">
+            @if (this.updateImgForm) {
+                <button (click)="showUpdateImgForm()">Ocultar formulario</button>
+                <br>
+                <app-update-img></app-update-img>
+                
+            } @else {
+                <button (click)="showUpdateImgForm()">Actualizar foto de perfil</button>
+            }
         </div>
         <div class="profile-data">
             <h2 [textContent]="this.playerData.name + ' ' + this.playerData.last_name"></h2>
