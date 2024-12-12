@@ -1,0 +1,11 @@
+<div>
+    @if (this.message !== "") {
+        <p [textContent]="this.message" id="error"></p>
+        <br>
+    }
+    <label>Seleccione una imagen</label>
+    <br>
+    <input type="file" id="image" class="form-control" accept="image/*" (change)="updateImg($event)">
+    <br>
+    <button type="submit">Actualizar</button>
+</div>
