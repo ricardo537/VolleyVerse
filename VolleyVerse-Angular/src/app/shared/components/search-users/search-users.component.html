@@ -1,0 +1,20 @@
+<div class="search">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Escribe el nombre del jugador" />
+    <button (click)="search()">Buscar</button>
+</div>
+
+<div class="results">
+    <div *ngIf="players.length === 0; else showResults">
+        <p [textContent]="message"></p>
+    </div>
+    <ng-template #showResults>
+        <div *ngFor="let player of players" class="player-card">
+            <img [src]="player.img" alt="{{ player.name }}" class="player-img" />
+            <div class="player-info">
+                <h3 class="player-name">{{ player.name }} {{ player.last_name }}</h3>
+                <p class="player-description">{{ player.description }}</p>
+            </div>
+            <button class="invite-button" (click)="invitePlayer(player.id)">Invitar</button>
+        </div>
+    </ng-template>
+</div>

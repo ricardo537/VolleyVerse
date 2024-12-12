@@ -1,0 +1,29 @@
+<div class="options">
+    <input type="text">
+    <button>Buscar</button>
+    <br>
+    @if (this.addForm) {
+        <button (click)="hide('add')">Ocultar formulario</button>
+    } @else {
+        <button (click)="show('add')">Crear equipo</button>
+    }
+    <br>
+    @if (this.requestsForm) {
+        <button (click)="hide('requests')">Ocultar formulario</button>
+    } @else {
+        <button (click)="show('requests')">Crear equipo</button>
+    }
+</div>
+@if (this.addForm) {
+    <div class="addForm">
+        <app-add-team></app-add-team>
+    </div>
+} 
+@if(this.requestsForm) {
+    <div class="requests">
+        <p>Solicitudes</p>
+    </div>
+}
+<div class="teams-container">
+
+</div>

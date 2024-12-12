@@ -37,6 +37,11 @@
     background-color: #e8e8e8;
 }
 
+.option {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Estilo responsive para pantallas móviles */
 @media (max-width: 768px) {
     .general-container {

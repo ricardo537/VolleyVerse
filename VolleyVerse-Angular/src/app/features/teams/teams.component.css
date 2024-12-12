@@ -1,0 +1,9 @@
+.teams-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+}

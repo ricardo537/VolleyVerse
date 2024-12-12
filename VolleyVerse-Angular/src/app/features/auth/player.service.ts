@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginDTO } from 'src/app/models/dto/login-dto';
+import { PlayerResumeDTO } from 'src/app/models/dto/player-resume-dto';
 import { RegisterPlayerDTO } from 'src/app/models/dto/register-player-dto';
 import { UpdatePlayerDTO } from 'src/app/models/dto/update-player-dto';
 
@@ -11,6 +12,7 @@ import { UpdatePlayerDTO } from 'src/app/models/dto/update-player-dto';
 export class PlayerService {
   private apiRegisterPlayerURL = "http://127.0.0.1:8080/volleyverse/api/v1/players/register";
   private apiUpdatePlayerURL = "http://127.0.0.1:8080/volleyverse/api/v1/players/update";
+  private apiSearchPlayersURL = "http://127.0.0.1:8080/volleyverse/api/v1/players/search?name=";
 
   constructor(private http: HttpClient) { }
 
@@ -40,6 +42,10 @@ export class PlayerService {
     };
 
     return this.http.post<LoginDTO>(this.apiUpdatePlayerURL, body);
+  }
+
+  public searchPlayers (name: string): Observable<PlayerResumeDTO[]> {
+    return this.http.get<PlayerResumeDTO[]>(`${this.apiSearchPlayersURL}${name}`);
   }
 
 }

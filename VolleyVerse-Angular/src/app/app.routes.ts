@@ -7,6 +7,7 @@ import { authSessionGuard } from './core/guards/auth-session.guard';
 import { RegisterPlayerComponent } from './features/auth/register/register-player/register-player.component';
 import { OutOfSessionGuard } from './core/guards/out-of-session.guard';
 import { PlayerProfileComponent } from './features/auth/profile/player-profile/player-profile.component';
+import { TeamsComponent } from './features/teams/teams.component';
 
 export const routes: Routes = [
     { path: 'volleyverse', title: 'VolleyVerse',
@@ -20,7 +21,8 @@ export const routes: Routes = [
             },
             { path: 'dashboard', component: DashboardComponent, title: 'Dashboard', canActivate: [authSessionGuard], 
                 children: [
-                    { path: 'profile', component: PlayerProfileComponent, title: 'Profile' }
+                    { path: 'profile', component: PlayerProfileComponent, title: 'Profile' },
+                    { path: 'teams', component: TeamsComponent, title: 'Teams' }
                     //Hay que cambiarlo por el componente home, lo único que aún no está creado
                 ]
             },
