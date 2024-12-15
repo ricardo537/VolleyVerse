@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PlayerService } from 'src/app/features/auth/player.service';
 import { PlayerResumeDTO } from 'src/app/models/dto/player-resume-dto';
@@ -14,11 +14,12 @@ import { PlayerResumeDTO } from 'src/app/models/dto/player-resume-dto';
   providers: [PlayerService]
 })
 export class SearchUsersComponent {
+  @Input() data?: any;
   public message: string = '';
   public searchQuery: string = '';
   public players: PlayerResumeDTO[] = [];
 
-  constructor(private playerService: PlayerService) {}
+  constructor(private playerService: PlayerService) { }
 
   public search(): void {
     this.playerService.searchPlayers(this.searchQuery).subscribe({
@@ -28,7 +29,7 @@ export class SearchUsersComponent {
       },
       error: (error) => {
         this.players = [];
-        this.message = 'Ha ocurrido un error al realizar la búsqueda.';
+        this.message = 'No se han encontrado usuarios con ese nombre.';
       }
     });
   }

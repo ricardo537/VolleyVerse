@@ -1,1 +1,40 @@
-<app-search-users></app-search-users>
+<div class="form-team">
+    <form class="formulario" [formGroup]="this.teamForm" (ngSubmit)="this.selectMembers()">
+        @if (this.message !== "") {
+            <p [textContent]="this.message"></p>
+        }
+        <div class="campo">
+          <label>Nombre del equipo</label>
+          <input type="text" name="name" formControlName="name" required />
+        </div>
+        
+        <div class="campo">
+          <label>Categoría</label>
+          <select name="category" formControlName="category" required>
+            <option value="" disabled selected>Seleccione la categoría</option>
+            <option value="senior">Senior: más de 20 años</option>
+            <option value="junior">Junior: 18-19 años</option>
+            <option value="juvenil">Juvenil: 16-17 años</option>
+            <option value="cadete">Cadete: 14-15 años</option>
+            <option value="infantil">Infantil: 12-13 años</option>
+            <option value="alevin">Alevín: 10-11 años</option>
+            <option value="benjamin">Benjamín: 8-9 años</option>
+          </select>
+        </div>
+        
+        <div class="campo">
+          <label>Tipo de equipo</label>
+          <select name="type" formControlName="type" required>
+            <option value="" disabled selected>Seleccione el tipo</option>
+            <option value="6x6">Volley 6x6</option>
+            <option value="4x4">Volley 4x4</option>
+            <option value="2x2">Volley 2x2</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="invite-button">Invitar jugadores</button>
+    </form>      
+</div>
+@if (this.searchUserVisibility) {
+    <app-search-users [data]="teamForm.value"></app-search-users>
+}

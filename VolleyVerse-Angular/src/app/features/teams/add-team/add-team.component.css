@@ -1,0 +1,62 @@
+.formulario {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #8e8e8e;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  select {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    background-color: #fafafa;
+    color: #262626;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #b2b2b2;
+  }
+  
+  .invite-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0095f6;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .invite-button:hover {
+    background-color: #0078c9;
+  }
+  
+  .invite-button:active {
+    background-color: #005f99;
+  }
+  
+  ::placeholder {
+    color: #b2b2b2;
+  }
