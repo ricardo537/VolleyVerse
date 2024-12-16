@@ -1,5 +1,5 @@
 <div class="form-team">
-    <form class="formulario" [formGroup]="this.teamForm" (ngSubmit)="this.selectMembers()">
+    <form class="formulario" [formGroup]="this.teamForm" (ngSubmit)="this.createTeam()">
         @if (this.message !== "") {
             <p [textContent]="this.message"></p>
         }
@@ -32,9 +32,9 @@
           </select>
         </div>
         
-        <button type="submit" class="invite-button">Invitar jugadores</button>
+        <button type="submit" class="invite-button">Crear equipo</button>
     </form>      
 </div>
 @if (this.searchUserVisibility) {
-    <app-search-users [data]="teamForm.value"></app-search-users>
+    <app-search-users [teamId]="teamId"></app-search-users>
 }

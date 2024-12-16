@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PlayerService } from 'src/app/features/auth/player.service';
 import { PlayerResumeDTO } from 'src/app/models/dto/player-resume-dto';
@@ -14,14 +14,16 @@ import { PlayerResumeDTO } from 'src/app/models/dto/player-resume-dto';
   providers: [PlayerService]
 })
 export class SearchUsersComponent {
-  @Input() data?: any;
+  @Input() teamId?: string;
   public message: string = '';
   public searchQuery: string = '';
   public players: PlayerResumeDTO[] = [];
 
   constructor(private playerService: PlayerService) { }
+ 
 
   public search(): void {
+    console.log(this.teamId);
     this.playerService.searchPlayers(this.searchQuery).subscribe({
       next: (response: PlayerResumeDTO[]) => {
         this.players = response;
