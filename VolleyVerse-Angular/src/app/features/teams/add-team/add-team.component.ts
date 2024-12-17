@@ -1,27 +1,26 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SearchUsersComponent } from 'src/app/shared/components/search-users/search-users.component';
 import { TeamService } from '../teams.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TeamCreationDTO } from 'src/app/models/dto/team-creation-dto';
 import { LoginDTO } from 'src/app/models/dto/login-dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-team',
-  imports: [ SearchUsersComponent, ReactiveFormsModule, HttpClientModule ],
+  imports: [ ReactiveFormsModule, HttpClientModule ],
   templateUrl: './add-team.component.html',
   styleUrl: './add-team.component.css',
   providers: [ TeamService ]
 })
 export class AddTeamComponent {
 
-  public searchUserVisibility: boolean = false;
   public teamForm: FormGroup;
   public message: string = "";
   public teamId: string = "";
 
-  constructor (private formBuilder: FormBuilder, private teamService: TeamService) {
+  constructor (private formBuilder: FormBuilder, private teamService: TeamService, private router: Router) {
     this.teamForm = this.formBuilder.group({
       name: ['', Validators.required ],
       category: ['', Validators.required ],
@@ -36,8 +35,8 @@ export class AddTeamComponent {
       next: (response: string) => {
         this.teamId = response;
         if (this.isValidData()) {
-          this.searchUserVisibility = true;
           this.message = "";
+          this.router.navigate(["/volleyverse/dashboard"]);
         } else {
           this.message = "Tienes que rellenar los datos del equipo antes de poder invitar a gente";
         }

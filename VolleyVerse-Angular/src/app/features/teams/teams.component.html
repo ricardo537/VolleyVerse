@@ -1,4 +1,4 @@
-<div class="options">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /><div class="options">
     <input type="text">
     <button>Buscar</button>
     <br>
@@ -25,5 +25,25 @@
     </div>
 }
 <div class="teams-container">
-
+    @if (this.teams.length == 0) {
+        <p>¡Crea tus equipos!</p>
+    } @else {
+        <div *ngFor="let team of teams" class="team-card">
+            <div class="options">
+                <h3>{{ team.name }}</h3>
+                <span class="material-symbols-outlined" (click)="leaveTeam(team.id)">exit_to_app</span>
+                <span class="material-symbols-outlined">edit</span>
+                <span class="material-symbols-outlined">person_add</span>
+            </div>
+            <p><strong>Categoría:</strong> {{ team.category }}</p>
+            <p><strong>Tipo:</strong> {{ team.type }}</p>
+            <p><strong>Miembros:</strong></p>
+            <ul>
+                <li *ngFor="let member of team.members">
+                    <img [src]="member.img">
+                    {{ member.name }}
+                </li>
+            </ul>
+        </div>
+    }
 </div>
